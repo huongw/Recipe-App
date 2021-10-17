@@ -1,4 +1,4 @@
-export default {
+const data = {
   diet: [
     { label: "Balanced", value: "balanced" },
     { label: "High-Fiber", value: "high-fiber" },
@@ -21,3 +21,5 @@ export default {
     { label: "American" }
   ]
 }
+
+export default data;
