@@ -1,0 +1,22 @@
+header {
+  min-height: 8vh;
+  padding: 20px 10px;
+  text-align: center;
+
+  @include flex;
+  justify-content: center;
+}
+
+.fix--header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: azure;
+}
+
+@media only screen and (max-width: 370px) {
+  h1 {
+    font-size: 25px;
+  }
+}

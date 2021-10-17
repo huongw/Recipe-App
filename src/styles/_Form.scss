@@ -1,0 +1,73 @@
+.form--container {
+  @include flex;
+  justify-content: center;
+  text-transform: capitalize;
+
+  background-color: rgba(226, 219, 203, 0.5);
+
+  min-height: 10vh;
+  padding: 20px 10px;
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(97, 96, 96, 0.5);
+
+  form {
+    @include flex($direction: column);
+    justify-content: space-around;
+
+    height: 150px;
+
+    .select--wrapper {
+      @include flex;
+      justify-content: space-around;
+      height: 33px;
+
+      .custom--select {
+        background-color: rgb(224, 214, 190);
+        border-radius: 5px;
+        height: inherit;
+        margin: 0 10px;
+        @include flex;
+
+        select {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    .input--text {
+      outline: none;
+      border: 2px solid rgb(224, 214, 190);
+      border-radius: 5px;
+      height: 33px;
+      padding: 0 5px;
+      max-width: 500px;
+      width: 80%;
+    }
+
+    .form--button {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 2px solid rgb(218, 201, 164);
+      outline: none;
+      background-color: rgb(218, 201, 164);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s linear;
+
+      &:hover {
+        box-shadow: 2px 2px 2px rgb(192, 192, 190);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 370px) {
+  select {
+    width: 95%;
+    font-size: 12px;
+  }
+}

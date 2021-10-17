@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Form from './components/Form';
+import RecipeList from './components/RecipeList';
+import useApplicationData from './hooks/useApplicationData';
+import Header from './components/Header';
 
 function App() {
+  const { options, setOptions, input, setInput, recipeList, setQuery } = useApplicationData();
+
+  const recipes = recipeList.map((r) => {
+    return <RecipeList
+      title={r.recipe.label}
+      image={r.recipe.image}
+      ingredients={r.recipe.ingredientLines}
+      calories={r.recipe.calories}
+    />
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="fix--header">
+        <Header />
+        <Form
+          options={options}
+          setOptions={setOptions}
+          input={input}
+          setInput={setInput}
+          setQuery={setQuery}
+        />
+      </div>
+      {recipes}
     </div>
   );
 }
