@@ -162,6 +162,7 @@ header .fas {
   right: 20px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .fix--header {
