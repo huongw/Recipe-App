@@ -9,3 +9,4 @@ It was built to better my understanding with React.
 - React
 - SASS
 - Axios
+- jQuery

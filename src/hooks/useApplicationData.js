@@ -18,6 +18,15 @@ export default function useApplicationData() {
     input
   })
 
+  // handle form toggle
+  const [openMenu, setOpenMenu] = useState(true);
+  const toggleMenu = function (state) {
+    if (state === undefined) {
+      return setOpenMenu(!openMenu);
+    }
+    setOpenMenu(state);
+  }
+
   useEffect(() => {
     axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${query.input}&app_id=${API_ID}&app_key=${API_KEY}&diet=${query.options.diet}&health=${query.options.health}&cuisineType=${query.options.cuisine}`)
       .then((res) => {
@@ -28,5 +37,5 @@ export default function useApplicationData() {
       })
   }, [query]);
 
-  return { options, setOptions, input, setInput, recipeList, setQuery };
+  return { options, setOptions, input, setInput, recipeList, setQuery, openMenu, toggleMenu };
 }

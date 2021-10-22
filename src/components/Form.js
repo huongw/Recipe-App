@@ -20,8 +20,16 @@ export default function Form(props) {
     setOptions({ ...options, [name]: value });
   };
 
+  let menuClass = "form--container";
+
+  if (props.visible) {
+    menuClass += " show--menu";
+  } else {
+    menuClass += " hide--menu";
+  }
+
   return (
-    <div className="form--container">
+    <div className={menuClass}>
       <form onSubmit={submitHandler}>
         <div className="select--wrapper">
           <Select name="diet" data={data.diet} onChange={onOptionChange} />

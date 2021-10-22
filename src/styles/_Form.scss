@@ -3,13 +3,14 @@
   justify-content: center;
   text-transform: capitalize;
 
-  background-color: rgba(226, 219, 203, 0.5);
+  background-color: rgba(226, 219, 203, 1);
 
   min-height: 10vh;
   padding: 20px 10px;
 
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(97, 96, 96, 0.5);
+  transition: 0.3s linear;
 
   form {
     @include flex($direction: column);
@@ -63,6 +64,14 @@
       }
     }
   }
+}
+
+.show--menu {
+  transform: translateY(0);
+}
+
+.hide--menu {
+  transform: translateY(-100%);
 }
 
 @media only screen and (max-width: 370px) {
