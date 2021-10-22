@@ -32,7 +32,7 @@ function App() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     }
-  }, []);
+  }, [toggleMenu]);
 
   return (
     <div className="App">
