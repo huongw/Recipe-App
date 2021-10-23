@@ -1,8 +1,6 @@
 ## Receipe App
 
-This is a receipe app I built using the Edamam API to receive receipe information.
-
-It was built to better my understanding with React.
+Find recipe ideas by typing in your ideal choice of food and filtering out the choices with three options: diet, health, and cuisine! This react app was a simple personal project built using Axios to fetch data from the Edamam API.
 
 ## Tech Stacks
 
